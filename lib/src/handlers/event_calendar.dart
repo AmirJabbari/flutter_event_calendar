@@ -82,7 +82,7 @@ class _EventCalendarState extends State<EventCalendar> {
     return SafeArea(
       child: buildScopeModels(
         child: Container(
-          color: Colors.white,
+          color: widget.calendarOptions?.calendarBackgroundColor,
           child: Column(
             children: [
               Header(

@@ -6,11 +6,13 @@ class CalendarOptions extends Model {
   bool toggleViewType;
   ViewType viewType;
   String font;
+  Color calendarBackgroundColor;
 
   CalendarOptions(
       {this.toggleViewType = false,
       this.viewType = ViewType.Monthly,
-      this.font = ''});
+      this.font = '',
+      this.calendarBackgroundColor = Colors.white});
 
   static CalendarOptions of(BuildContext context) =>
       ScopedModel.of<CalendarOptions>(context);
