@@ -14,12 +14,14 @@ class CalendarDaily extends StatelessWidget {
   List<EventDateTime> enabledDays;
   List<EventDateTime> disabledDays;
   List<EventDateTime> colorizedDays;
+  Color calendarShadowColor;
 
   CalendarDaily(
       {this.onCalendarChanged,
       required this.enabledDays,
       required this.colorizedDays,
-      required this.disabledDays})
+      required this.disabledDays,
+      required this.calendarShadowColor})
       : super() {
     dayIndex =
         CalendarUtils.getPartByInt(format: PartFormat.day);
@@ -75,8 +77,8 @@ class CalendarDaily extends StatelessWidget {
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                       colors: [
-                        const Color(0xffffffff),
-                        const Color(0x0affffff)
+                        calendarShadowColor,
+                        calendarShadowColor.withOpacity(0.5)
                       ],
                       tileMode: TileMode.clamp,
                     ),
@@ -94,8 +96,8 @@ class CalendarDaily extends StatelessWidget {
                       begin: Alignment.centerRight,
                       end: Alignment.centerLeft,
                       colors: [
-                        const Color(0xffffffff),
-                        const Color(0x0affffff)
+                        calendarShadowColor,
+                        calendarShadowColor.withOpacity(0.5)
                       ],
                       tileMode: TileMode.clamp,
                     ),

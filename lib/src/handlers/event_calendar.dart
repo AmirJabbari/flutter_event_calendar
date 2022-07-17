@@ -82,7 +82,7 @@ class _EventCalendarState extends State<EventCalendar> {
     return SafeArea(
       child: buildScopeModels(
         child: Container(
-          color: Colors.white,
+          color: widget.calendarOptions?.calendarBackgroundColor,
           child: Column(
             children: [
               Header(
@@ -104,6 +104,7 @@ class _EventCalendarState extends State<EventCalendar> {
                       colorizedDays: widget.colorizedDays,
                       disabledDays: widget.disabledDays,
                       enabledDays: widget.enabledDays,
+                      calendarShadowColor: widget.calendarOptions?.calendarBackgroundColor??Colors.white,
                       onCalendarChanged: () {
                         widget.onChangeDateTime?.call(EventCalendar.dateTime);
                         setState(() {});
